@@ -15,3 +15,35 @@
 .listado-libro:hover{
 	box-shadow: 0 0 5px #BBB;
 }
+
+.btn_actualizar{
+	background-color: green;
+	color: white
+}
+
+.btn_borrar{
+	background-color: red;
+	color: white
+}
+
+
+table{
+    border-collapse: collapse;
+	border: 1px solid black;
+	font-size: 16px;
+}
+
+td{
+    padding: 2px 4px;
+}
+
+tr:first-child{
+    font-weight: bold;
+    background-color: violet;
+	color:black;
+	text-align: center;
+}
+
+tr:nth-child(2n+3){
+    background-color: pink;
+}

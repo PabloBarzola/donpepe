@@ -1,26 +1,26 @@
 <?php
-	// Configuración
+	// Configuraciï¿½n
 	$folder = "perfiles/"; // Carpeta a la que queremos subir los archivos
-	$maxlimit = 6000000; // Máximo límite de tamaño (en bits), menos de 1mb
-	$allowed_ext = "rar,jpg,png,gif,zip,html,txt,pdf"; // Extensiones permitidas (usar una coma para separarlas)
-	$overwrite = "no"; // Permitir sobreescritura? (yes/no)
+	$maxlimit = 3500000; // Mï¿½ximo lï¿½mite de tamaï¿½o (en bits), menos de 1mb
+	$allowed_ext = "jpg,png,gif,webp,zip,jpeg"; // Extensiones permitidas (usar una coma para separarlas)
+	$overwrite = "yes"; // Permitir sobreescritura? (yes/no)
 
 	$match = ""; 
-	$filesize = $_FILES['userfile']['size']; // toma el tamaño del archivo
-	$filename = strtolower($_FILES['userfile']['name']); // toma el nombre del archivo y lo pasa a minúsculas
+	$filesize = $_FILES['userfile']['size']; // toma el tamaï¿½o del archivo
+	$filename = strtolower($_FILES['userfile']['name']); // toma el nombre del archivo y lo pasa a minï¿½sculas
 
 
-	if(!$filename || $filename==""){ // mira si no se ha seleccionado ningún archivo
-	   $error = "- Ningún archivo selecccionado para subir.<br>";
+	if(!$filename || $filename==""){ // mira si no se ha seleccionado ningï¿½n archivo
+	   $error = "- Ningï¿½n archivo selecccionado para subir.<br>";
 	}elseif(file_exists($folder.$filename) && $overwrite=="no"){ // comprueba si el archivo existe ya
 	   $error = "- El archivo <b>$filename</b> ya existe<br>";
 	}
 
-	// comprobar tamaño de archivo
-	if($filesize < 1){ // el archivo está vacío
-	   $error .= "- Archivo vacío.<br>";
-	}elseif($filesize > $maxlimit){ // el archivo supera el máximo
-	   $error .= "- Este archivo supera el máximo tamaño permitido.<br>";
+	// comprobar tamaï¿½o de archivo
+	if($filesize < 1){ // el archivo estï¿½ vacï¿½o
+	   $error .= "- Archivo vacï¿½o.<br>";
+	}elseif($filesize > $maxlimit){ // el archivo supera el mï¿½ximo
+	   $error .= "- Este archivo supera el mï¿½ximo tamaï¿½o permitido.<br>";
 	}
 
 	$file_ext = preg_split("/\./",$filename); 
@@ -39,7 +39,7 @@
 	   if(move_uploaded_file($_FILES['userfile']['tmp_name'], $folder.$filename)){ // Finalmente sube el archivo
 		  print "<b>$filename</b> se ha subido correctamente!"; 
 	   }else{
-		  print "Error! Puede que el tamaño supere el máximo permitido por el servidor. Inténtelo de nuevo."; // Otro error
+		  print "Error! Puede que el tamaï¿½o supere el mï¿½ximo permitido por el servidor. Intï¿½ntelo de nuevo."; // Otro error
 	   }
 	}
 

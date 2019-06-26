@@ -1,6 +1,7 @@
 <?php
 	// login_pr.php
 	
+	
 	// 0. Recibir los datos del formulario
 	$usuario = $_POST['usuario'];
 	$clave = md5($_POST['clave']);
